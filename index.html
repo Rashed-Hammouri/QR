@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Redirecting to App Store...</title>
+    <script>
+      window.onload = function () {
+        const userAgent =
+          navigator.userAgent || navigator.vendor || window.opera;
+
+        if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
+          window.location.href =
+            "https://apps.apple.com/us/app/%D9%85%D8%AA%D8%A7%D8%A8%D8%B9%D8%A9-%D8%A7%D9%84%D8%A3%D8%AF%D8%A7%D8%A1-%D8%A7%D9%84%D8%AD%D9%83%D9%88%D9%85%D9%8A-pmdu/id1478609575";
+        } else if (/android/i.test(userAgent)) {
+          window.location.href =
+            "https://play.google.com/store/apps/details?id=com.jo.gov.pmdu";
+        } else {
+          document.getElementById("fallback").style.display = "block";
+        }
+      };
+    </script>
+  </head>
+  <body>
+    <p>جاري التحويل إلى المتجر المناسب...</p>
+    <div id="fallback" style="display: none">
+      <p>يرجى فتح هذا الرابط من هاتفك.</p>
+    </div>
+  </body>
+</html>
